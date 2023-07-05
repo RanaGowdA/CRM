@@ -10,3 +10,15 @@ R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\De
 R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\refint\CustomerRelationshipManagement.Shared.dll
 R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.pdb
 R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\ref\CustomerRelationshipManagement.Shared.dll
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\bin\Debug\net6.0\CustomerRelationshipManagement.Shared.deps.json
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\bin\Debug\net6.0\CustomerRelationshipManagement.Shared.dll
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\bin\Debug\net6.0\CustomerRelationshipManagement.Shared.pdb
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.csproj.AssemblyReference.cache
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.AssemblyInfoInputs.cache
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.AssemblyInfo.cs
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.csproj.CoreCompileInputs.cache
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.dll
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\refint\CustomerRelationshipManagement.Shared.dll
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.pdb
+C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\ref\CustomerRelationshipManagement.Shared.dll

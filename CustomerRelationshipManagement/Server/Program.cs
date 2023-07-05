@@ -1,4 +1,10 @@
+using CRM.Server.Repos.RepoImplementation;
+using CustomerRelationshipManagement.Server;
+using CustomerRelationshipManagement.Server.Data;
+using CustomerRelationshipManagement.Server.Repo.RepoImplementation;
+using CustomerRelationshipManagement.Server.Repo.RepoInterfaces;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +12,15 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<CRMDbContext>(options =>
+  options.UseSqlite(builder.Configuration.GetConnectionString("CRMDb")));
+
+//builder.Services.AddDbContext<WCDbContext>(options =>
+//      options.UseSqlite(builder.Configuration.GetConnectionString("CRMDb")));
+
+builder.Services.AddTransient<IAdministration, Administration>();
+builder.Services.AddTransient<ILeadRepository, LeadRepository>();
 
 var app = builder.Build();
 

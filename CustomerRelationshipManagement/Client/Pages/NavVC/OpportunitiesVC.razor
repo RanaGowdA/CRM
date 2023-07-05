@@ -1,7 +1,323 @@
 ﻿@page "/opportunitiesVC"
+"
+@using System.Net.Http.Json;
+@using System.Text.Json;
+@using System.Text;
+@using System.Net.Http.Headers;
+@using CustomerRelationshipManagement.Client.Pages.StandardVC;
+@using CustomerRelationshipManagement.Shared;
+@using CustomerRelationshipManagement.Shared.Dto;
+@inject IDialogService Dialog
+@inject HttpClient httpClient
+@inject ISnackbar SnackbarService
 
-<h3>OpportunitiesVC</h3>
+
+<MudDataGrid Class="pt-3 pa-4" FixedHeader="true" Dense="true" T="Lead" MultiSelection="true" ReadOnly="false"
+             Items="@Elements" SortMode="SortMode.Multiple" Filterable="true" QuickFilter="@_quickFilter"
+             Hideable="true" RowClick="@RowClicked" SelectedItemsChanged="@SelectedItemsChanged">
+
+    <ToolBarContent>
+        <MudText Typo="Typo.h4" Color="Color.Primary">Opportunities</MudText>
+        <MudSpacer />
+        <MudTextField title="Search" @bind-Value="_searchString" Placeholder="Search" Adornment="Adornment.Start" Immediate="true"
+                      AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+
+        <MudSpacer />
+        <MudDateRangePicker PickerVariant="PickerVariant.Dialog" Label="Date Range" @bind-DateRange="_dateRange" Style="min-width:50px;" />
+        <MudSpacer />
+        <MudFab Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Update" Color="Color.Primary" Size="Size.Small" OnClick="GetLeads">Update</MudFab>
+        <MudSpacer />
+        <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.Add" Size="Size.Small" OnClick="CreateNewOpportunity"> </MudFab>
+    </ToolBarContent>
+
+    <Columns>
+        <SelectColumn T="Lead" />
+        <PropertyColumn Property="x => x.Organization" Title="Organization" Sortable="false" Filterable="false" />
+        <PropertyColumn Property="x => x.Industry" SortBy="@_sortBy" />
+        <PropertyColumn Property="x => x.Opportunity.Status" Title="Status" />
+        <PropertyColumn Property="x => x.BusinessType" />
+        <PropertyColumn Property="x => x.ServiceLines" Title="ServiceLines" />
+        <PropertyColumn Property="x => x.Geo" />
+        <PropertyColumn Property="x => x.Opportunity.CreatedOn" Title="CreatedOn" />
+        <PropertyColumn Property="x => x.ForecastedValue" Title="ForecastedValue" />
+        <PropertyColumn Property="x => x.Opportunity.ModifiedOn" Title="ModifiedOn" />
+        <TemplateColumn CellClass="d-flex justify-end">
+            <CellTemplate>
+                <MudIconButton Size="@Size.Small" Icon="@Icons.Material.Outlined.Edit" OnClick="StartedEditingItem" />
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="Lead" />
+    </PagerContent>
+</MudDataGrid>
+
 
 @code {
+    private bool showCallAlert = false;
+    private string alertMessage;
+    private Severity alertSeverity;
+    private MudDateRangePicker _picker;
+    private DateRange _dateRange = new DateRange(DateTime.Now.AddDays(-1).Date, DateTime.Now.AddDays(5).Date);
+    private IEnumerable<Lead> Elements = new List<Lead>();
+    private string _searchString;
+    private bool _sortNameByLength;
+    private List<string> _events = new();
+    public Lead CurrentSelectedLead { get; set; }
+    public Lead NewLead { get; set; }
 
+    private DialogOptions DialogOptionsAddEditLead = new DialogOptions()
+        {
+            MaxWidth = MaxWidth.ExtraLarge,
+            FullWidth = true,
+            CloseButton = true,
+            DisableBackdropClick = true,
+            Position = DialogPosition.TopCenter
+        };
+
+
+    // custom sort by name length
+    private Func<Lead, object> _sortBy => x =>
+    {
+        if (_sortNameByLength)
+            return x.Name.Length;
+        else
+            return x.Name;
+    };
+
+    // quick filter - filter gobally across multiple columns with the same input
+    private Func<Lead, bool> _quickFilter => x =>
+    {
+        if (string.IsNullOrWhiteSpace(_searchString))
+            return true;
+
+        if (x.Organization.Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        if (x.Geo.ToString().Contains(_searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+
+        if ($"{x.Industry} {x.SalesType} {x.BusinessType}".Contains(_searchString))
+            return true;
+
+        return false;
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        Elements = await GetLeadListByCurrentUserIdWithDates();
+    }
+
+
+    private async Task<List<Lead>> GetOpportunityList()
+    {
+        // create request object
+        var request = new HttpRequestMessage(HttpMethod.Post, "api/Lead/allOpportunity");
+
+        //PayLoad
+        DataIdDTO dataIdDTO = new();
+        dataIdDTO.Id = 1;
+
+        // set request body
+        request.Content = new StringContent(JsonSerializer.Serialize(dataIdDTO), Encoding.UTF8, "application/json");
+
+        //// add authorization header
+        //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
+
+        // send request
+        var response = await httpClient.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var outputLeadsWithOpportunites = new List<Lead>();
+            outputLeadsWithOpportunites = await response.Content.ReadFromJsonAsync<List<Lead>>();
+            if (outputLeadsWithOpportunites != null)
+            {
+                return outputLeadsWithOpportunites;
+            }
+        }
+
+        return new List<Lead>();
+        //var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:7042/api/lead/allLeads");
+    }
+
+    private async void GetLeads()
+    {
+        Elements = await GetLeadListByCurrentUserIdWithDates();
+    }
+
+    private async Task<List<Lead>> GetLeadListByCurrentUserIdWithDates()
+    {
+        //Elements = await httpClient.GetFromJsonAsync<List<LeadDto>>("api/Lead/allLeads");
+        // create request object
+        var request = new HttpRequestMessage(HttpMethod.Post, "api/Lead/oppsByDates");
+        SearchFromDateToDateDto dataIdDTO = new();
+        dataIdDTO.UserId = 1;
+        dataIdDTO.StartDate = _dateRange.Start.Value;
+        dataIdDTO.EndDate = _dateRange.End.Value;
+
+        // set request body
+        request.Content = new StringContent(JsonSerializer.Serialize(dataIdDTO), Encoding.UTF8, "application/json");
+
+        //// add authorization header
+        //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
+
+
+        // send request
+        var response = await httpClient.SendAsync(request);
+        if (response.IsSuccessStatusCode)
+        {
+            var outputLeads = new List<Lead>();
+            outputLeads = await response.Content.ReadFromJsonAsync<List<Lead>>();
+            if (outputLeads != null)
+            {
+                return outputLeads;
+            }
+        }
+        return new List<Lead>();
+        //var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:7042/api/lead/allLeads");
+    }
+
+    // events
+    void RowClicked(DataGridRowClickEventArgs<Lead> args)
+    {
+        _events.Insert(0, $"Event = RowClick, Index = {args.RowIndex}, Data = {System.Text.Json.JsonSerializer.Serialize(args.Item)}");
+    }
+
+    void SelectedItemsChanged(HashSet<Lead> items)
+    {
+        var selectitem = items.FirstOrDefault();
+        if (selectitem != null)
+        {
+            CurrentSelectedLead = selectitem;
+        }
+    }
+
+    // events
+    private async Task StartedEditingItem()
+    {
+        var parameters = new DialogParameters();
+        parameters.Add("LeadItem", CurrentSelectedLead);
+        parameters.Add("IsOpportunity", true);
+        var dialog = await Dialog.ShowAsync<LeadOppProVC>("Edit Opportunity", parameters, DialogOptionsAddEditLead);
+        var result = await dialog.Result;
+        if (!result.Canceled)
+        {
+            // create request object
+            var request = new HttpRequestMessage(HttpMethod.Post, "api/Lead/editOpportunity");
+
+            // set request body
+            request.Content = new StringContent(JsonSerializer.Serialize(CurrentSelectedLead), Encoding.UTF8, "application/json");
+
+            //// add authorization header
+            //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
+
+            // send request
+            var response = await httpClient.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                //ShowAlerts("Lead Updated", Severity.Success, Color.Success);
+                ShowColorAlerts("Opportunity Updated", Severity.Success);
+                Elements = await GetLeadListByCurrentUserIdWithDates();
+            }
+            else
+            {
+                //ShowAlerts("Fail To Update", Severity.Error, Color.Error);
+                ShowColorAlerts("Opportunity Fail To Update", Severity.Error);
+            }
+        }
+        //else
+        //{
+        //    ShowColorAlerts("Opportunity Not Updated", Severity.Error);
+        //}
+
+    }
+
+
+    private async Task CreateNewOpportunity()
+    {
+        var parameters = new DialogParameters();
+        NewLead = new Lead();
+        NewLead.LeadStatus = LeadStatus.Closed_Qualified;
+        NewLead.Opportunity = new Opportunity();
+        NewLead.Project = new Project();
+        parameters.Add("LeadItem", NewLead);
+        parameters.Add("IsOpportunity", true);
+        var dialog = await Dialog.ShowAsync<LeadOppProVC>("Add Opportunity", parameters, DialogOptionsAddEditLead);
+        var result = await dialog.Result;
+
+        if (!result.Canceled)
+        {
+            NewLead.CreatedById = 1;
+            NewLead.CreatedOn = DateTime.UtcNow;
+            NewLead.ModifiedOn = DateTime.UtcNow;
+            NewLead.Opportunity = new Opportunity();
+            NewLead.Opportunity.CreatedOn = DateTime.UtcNow;
+            NewLead.Opportunity.CreatedById = 1;
+            NewLead.Project = new Project();
+            NewLead.Project.CreatedOn = DateTime.UtcNow;
+            NewLead.Opportunity.CreatedById = 1;
+            // create request object
+            var request = new HttpRequestMessage(HttpMethod.Post, "api/Lead/createOpportunity");
+
+            // set request body
+            request.Content = new StringContent(JsonSerializer.Serialize(NewLead), Encoding.UTF8, "application/json");
+
+            //// add authorization header
+            //request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", "my-token");
+
+            // send request
+            var response = await httpClient.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                ShowColorAlerts("Opportunity Updated", Severity.Success);
+                Elements = await GetLeadListByCurrentUserIdWithDates();
+            }
+            else
+            {
+                ShowColorAlerts("Opportunity Fail To Update", Severity.Error);
+            }
+        }
+        //else
+        //{
+        //    //ShowAlerts("Lead Not Added", Severity.Error, Color.Error);
+        //    ShowColorAlerts("Cancelled While Opportunity Creating", Severity.Error);
+        //}
+    }
+
+
+
+    private void ShowAlerts(string TextToDisplay, Severity AlertSeverity, Color color)
+    {
+        SnackbarService.Add<MudChip>(new Dictionary<string, object>() {
+            { "Text", TextToDisplay },
+            { "Color", color },
+            { "Severity", AlertSeverity }
+        });
+    }
+
+    private void ShowColorAlerts(string TextToDisplay, Severity AlertSeverity)
+    {
+        SnackbarService.Clear();
+        SnackbarService.Configuration.PositionClass = Defaults.Classes.Position.BottomCenter;
+        SnackbarService.Add(TextToDisplay, AlertSeverity);
+    }
+
+    private void CloseMe(bool value)
+    {
+        showCallAlert = false;
+    }
+    private void OpenDialog(DialogOptions Options, DialogParameters Parameters, string Title)
+    {
+        Dialog.Show<LeadOppProVC>(Title, Parameters, Options);
+    }
+    void CanceledEditingItem(Lead item)
+    {
+        _events.Insert(0, $"Event = CanceledEditingItem, Data = {System.Text.Json.JsonSerializer.Serialize(item)}");
+    }
+
+    void CommittedItemChanges(Lead item)
+    {
+        _events.Insert(0, $"Event = CommittedItemChanges, Data = {System.Text.Json.JsonSerializer.Serialize(item)}");
+    }
 }
+

@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Server\\CustomerRelationshipManagement.Server.csproj": {}
+    "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Server\\CustomerRelationshipManagement.Server.csproj": {}
   },
   "projects": {
-    "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Client\\CustomerRelationshipManagement.Client.csproj": {
+    "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Client\\CustomerRelationshipManagement.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Client\\CustomerRelationshipManagement.Client.csproj",
+        "projectUniqueName": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Client\\CustomerRelationshipManagement.Client.csproj",
         "projectName": "CustomerRelationshipManagement.Client",
-        "projectPath": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Client\\CustomerRelationshipManagement.Client.csproj",
-        "packagesPath": "C:\\Users\\Rana.Gowd\\.nuget\\packages\\",
-        "outputPath": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Client\\obj\\",
+        "projectPath": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Client\\CustomerRelationshipManagement.Client.csproj",
+        "packagesPath": "C:\\Users\\ng937c8\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rana.Gowd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ng937c8\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,14 +28,16 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\ng937c8\\Documents\\work\\source code\\SAML Component\\IAM.DSP.Common.SAML\\IAM.DSP.Common.SAML\\bin\\Release": {},
+          "C:\\Users\\ng937c8\\Documents\\work\\source code\\SAML Component\\SAML for .NET Core Licensed\\Bin": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj": {
-                "projectPath": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj"
+              "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj": {
+                "projectPath": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj"
               }
             }
           }
@@ -92,6 +95,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
+              "version": "[6.0.18, 6.0.18]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -106,20 +115,21 @@
         }
       }
     },
-    "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Server\\CustomerRelationshipManagement.Server.csproj": {
+    "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Server\\CustomerRelationshipManagement.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Server\\CustomerRelationshipManagement.Server.csproj",
+        "projectUniqueName": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Server\\CustomerRelationshipManagement.Server.csproj",
         "projectName": "CustomerRelationshipManagement.Server",
-        "projectPath": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Server\\CustomerRelationshipManagement.Server.csproj",
-        "packagesPath": "C:\\Users\\Rana.Gowd\\.nuget\\packages\\",
-        "outputPath": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Server\\obj\\",
+        "projectPath": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Server\\CustomerRelationshipManagement.Server.csproj",
+        "packagesPath": "C:\\Users\\ng937c8\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rana.Gowd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ng937c8\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -130,17 +140,19 @@
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "C:\\Users\\ng937c8\\Documents\\work\\source code\\SAML Component\\IAM.DSP.Common.SAML\\IAM.DSP.Common.SAML\\bin\\Release": {},
+          "C:\\Users\\ng937c8\\Documents\\work\\source code\\SAML Component\\SAML for .NET Core Licensed\\Bin": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Client\\CustomerRelationshipManagement.Client.csproj": {
-                "projectPath": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Client\\CustomerRelationshipManagement.Client.csproj"
+              "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Client\\CustomerRelationshipManagement.Client.csproj": {
+                "projectPath": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Client\\CustomerRelationshipManagement.Client.csproj"
               },
-              "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj": {
-                "projectPath": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj"
+              "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj": {
+                "projectPath": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj"
               }
             }
           }
@@ -158,6 +170,12 @@
             "Microsoft.AspNetCore.Components.WebAssembly.Server": {
               "target": "Package",
               "version": "[6.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.19, )"
             }
           },
           "imports": [
@@ -183,20 +201,21 @@
         }
       }
     },
-    "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj": {
+    "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj",
         "projectName": "CustomerRelationshipManagement.Shared",
-        "projectPath": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj",
-        "packagesPath": "C:\\Users\\Rana.Gowd\\.nuget\\packages\\",
-        "outputPath": "R:\\Web Development\\RanaAdigowni\\CRM\\CustomerRelationshipManagement\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Shared\\CustomerRelationshipManagement.Shared.csproj",
+        "packagesPath": "C:\\Users\\ng937c8\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ng937c8\\Documents\\AXISCADES\\CRM\\CustomerRelationshipManagement\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Rana.Gowd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ng937c8\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -206,6 +225,8 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\ng937c8\\Documents\\work\\source code\\SAML Component\\IAM.DSP.Common.SAML\\IAM.DSP.Common.SAML\\bin\\Release": {},
+          "C:\\Users\\ng937c8\\Documents\\work\\source code\\SAML Component\\SAML for .NET Core Licensed\\Bin": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

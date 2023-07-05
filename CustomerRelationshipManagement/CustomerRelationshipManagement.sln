@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerRelationshipManagement.Server", "Server\CustomerRelationshipManagement.Server.csproj", "{78E08CB8-8D2A-4F92-8BDD-17F01726F71C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerRelationshipManagement.Server", "Server\CustomerRelationshipManagement.Server.csproj", "{78E08CB8-8D2A-4F92-8BDD-17F01726F71C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerRelationshipManagement.Client", "Client\CustomerRelationshipManagement.Client.csproj", "{94669FCE-4E35-458C-BF45-8670BE09A709}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerRelationshipManagement.Client", "Client\CustomerRelationshipManagement.Client.csproj", "{94669FCE-4E35-458C-BF45-8670BE09A709}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerRelationshipManagement.Shared", "Shared\CustomerRelationshipManagement.Shared.csproj", "{01B763A6-5B75-421E-8297-8A36758AEA2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerRelationshipManagement.Shared", "Shared\CustomerRelationshipManagement.Shared.csproj", "{01B763A6-5B75-421E-8297-8A36758AEA2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

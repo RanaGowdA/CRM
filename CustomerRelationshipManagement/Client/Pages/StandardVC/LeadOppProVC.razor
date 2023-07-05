@@ -1,5 +1,345 @@
-﻿<h3>LeadOppProVC</h3>
+﻿@using CustomerRelationshipManagement.Shared;
+@using CustomerRelationshipManagement.Shared.Models.Enums;
+@using CustomerRelationshipManagement.Shared.Models.Interfaces;
+
+
+<MudDialog>
+    <DialogContent>
+        <MudGrid Class="pa-2">
+            <MudItem xs="12" sm="12">
+                <div class="d-flex flex-grow-1 gap-4 flex-wrap justify-center mud-width-full">
+
+                    <MudSelect FullWidth="true" Label="Template/Org" Value="_currentSelectedTemplate" 
+                        OpenIcon="@Icons.Material.Filled.SettingsApplications" Style="width:100%" AdornmentColor="Color.Primary"
+                               ValueChanged="@((string newValue) => TemplateChanged(newValue))">
+                        @if (TemplateConfigurations.Count > 0)
+                        {
+                            var datalist = TemplateConfigurations.Select(x => x.Name).Distinct().ToList();
+                            @foreach (string item in datalist)
+                            {
+                                <MudSelectItem Value="@item.ToString()">@item.ToString()</MudSelectItem>
+                            }
+                        }
+                    </MudSelect>
+
+
+                    <MudSelect FullWidth="true" Label="Segment" Value="_currentSelectedSegment" ValueChanged="@((string newValue) => SegmentChanged(newValue))"
+                               OpenIcon="@Icons.Material.Filled.Segment" Style="width:100%" AdornmentColor="Color.Primary">
+                        @if (TemplateConfigurations.Count > 0)
+                        {
+                            @foreach (string item in Segments)
+                            {
+                                <MudSelectItem Value="@item.ToString()">@item.ToString()</MudSelectItem>
+                            }
+                        }
+                    </MudSelect>
+
+
+                    <MudSelect FullWidth="true" Label="City" Value="_currentSelectedCity" ValueChanged="@((string newValue) => CityChanged(newValue))"
+                               OpenIcon="@Icons.Material.Filled.LocationCity" Style="width:100%" AdornmentColor="Color.Primary">
+                        @if (TemplateConfigurations.Count > 0)
+                        {
+                            @foreach (string item in Cities)
+                            {
+                                <MudSelectItem Value="@item.ToString()">@item.ToString()</MudSelectItem>
+                            }
+                        }
+                    </MudSelect>
+
+
+
+                    <MudTextField @bind-Value="_currentSelectedRegion" Label="Region">    </MudTextField>
+
+
+
+
+
+                </div>
+            </MudItem>
+            <MudItem xs="12" sm="5">
+                <div class="d-flex flex-grow-1 gap-4 flex-wrap justify-center mud-width-full">
+                    <MudPaper Class="mud-theme-primary" Elevation="0" Height="30px" Width="100%">
+                        <MudText Align="Align.Center" Style="vertical-align:central">Who?</MudText>
+                    </MudPaper>
+                    <MudTextField @bind-Value="LeadItem.Name" Label="FirstName" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.LastName" Label="LastName" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.Organization" Label="Organization" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.Title" Label="Designation" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.EmailAddress" Label="EmailAddress" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.Phone" Label="Phone" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.MobilePhone" Label="MobilePhone" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.Fax" Label="Fax" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.WebSite" Label="Web Site" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudNumericField @bind-Value="LeadItem.NumberOfEmployees" Label="Number of Employees" Min="0" Variant="Variant.Outlined" Margin="Margin.Dense"></MudNumericField>
+                    <MudTextField Class="flex-grow-1" Width="100%" @bind-Value="LeadItem.Address1" Label="Address" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.City" Label="City" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.State" Label="State" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.PostalCode" Label="Pin/Zip" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField @bind-Value="LeadItem.Country" Label="Country" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                </div>
+            </MudItem>
+            <MudItem xs="12" sm="4">
+                <div class="d-flex flex-grow-1 gap-4 flex-wrap justify-center mud-width-full">
+                    <MudPaper Class="mud-theme-primary flex-grow-1" Elevation="0" Height="30px">
+                        <MudText Align="Align.Center" Style="vertical-align:central">What?</MudText>
+                    </MudPaper>
+
+
+                    <MudTextField FullWidth="true" @bind-Value="LeadItem.Industry" Label="Industry" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+                    <MudTextField FullWidth="true" @bind-Value="LeadItem.Description" Label="Description" Variant="Variant.Outlined" Margin="Margin.Dense"></MudTextField>
+
+                    <MudSelect FullWidth="true" Label="SalesType" @bind-Value="LeadItem.SalesType" OpenIcon="@Icons.Material.Filled.AddRoad" Style="width:100%" AdornmentColor="Color.Primary">
+                        @foreach (SalesType item in Enum.GetValues(typeof(SalesType)))
+                        {
+                            <MudSelectItem Value="@item">@item</MudSelectItem>
+                        }
+                    </MudSelect>
+
+                    <MudSelect Class="mud-width-full" Style="min-width:100%" Label="Geo" @bind-Value="LeadItem.Geo" OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary">
+                        @foreach (Geo item in Enum.GetValues(typeof(Geo)))
+                        {
+                            <MudSelectItem Value="@item">@item</MudSelectItem>
+                        }
+                    </MudSelect>
+
+
+
+                    <MudSelect FullWidth="true" Label="BusinessType" @bind-Value="LeadItem.BusinessType"
+                               OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                        @foreach (BusinessType item in Enum.GetValues(typeof(BusinessType)))
+                        {
+                            <MudSelectItem Value="@item.ToString()">@item.ToString()</MudSelectItem>
+                        }
+                    </MudSelect>
+
+                    @if (LeadItem.BusinessType == BusinessType.DigitalAndInnovation.ToString())
+                    {
+                        <MudSelect FullWidth="true" Label="Offering" @bind-Value="LeadItem.Offering"
+                                   OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                            @foreach (DigitalInnovationOffering item in Enum.GetValues(typeof(DigitalInnovationOffering)))
+                            {
+                                <MudSelectItem Value="@item.ToString()">@item.ToString()</MudSelectItem>
+                            }
+                        </MudSelect>
+                    }
+
+
+                    @if (LeadItem.BusinessType == BusinessType.EngineeringServices.ToString())
+                    {
+                        <MudSelect FullWidth="true" Label="Offering" @bind-Value="LeadItem.Offering"
+                                   OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                            @foreach (EngineeringOffering item in Enum.GetValues(typeof(EngineeringOffering)))
+                            {
+                                <MudSelectItem Value="@item.ToString()">@item.ToString()</MudSelectItem>
+                            }
+                        </MudSelect>
+                    }
+
+
+                    @if (LeadItem.Offering == DigitalInnovationOffering.Service_TnM.ToString())
+                    {
+                        <MudSelect FullWidth="true" Label="ServiceLines" @bind-Value="LeadItem.ServiceLines"
+                                   OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                            @foreach (EnggServiceLines item in Enum.GetValues(typeof(EnggServiceLines)))
+                            {
+                                <MudSelectItem Value="@item.ToString()">@item.ToString()</MudSelectItem>
+                            }
+                        </MudSelect>
+                    }
+
+                    @if (LeadItem.Offering == DigitalInnovationOffering.Service_Projects.ToString())
+                    {
+                        <MudSelect FullWidth="true" Label="ServiceLines" @bind-Value="LeadItem.ServiceLines"
+                                   OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                            @foreach (DI_ServiceLines item in Enum.GetValues(typeof(DI_ServiceLines)))
+                            {
+                                <MudSelectItem Value="@item.ToString()">@item.ToString()</MudSelectItem>
+                            }
+                        </MudSelect>
+                    }
+
+                    @if (LeadItem.Offering == DigitalInnovationOffering.Products.ToString())
+                    {
+                        <MudSelect FullWidth="true" Label="ServiceLines" @bind-Value="LeadItem.ServiceLines"
+                                   OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                            @foreach (DIProducts item in Enum.GetValues(typeof(DIProducts)))
+                            {
+                                <MudSelectItem Value="@item.ToString()">@item.ToString()</MudSelectItem>
+                            }
+                        </MudSelect>
+                    }
+                </div>
+            </MudItem>
+
+            <MudItem xs="12" sm="3">
+
+                <div class="d-flex flex-grow-1 gap-4 flex-wrap justify-center mud-width-full">
+                    <MudPaper Class="mud-theme-primary" Elevation="0" Height="30px" Width="100%">
+                        <MudText Align="Align.Center" Style="vertical-align:central">When?</MudText>
+                    </MudPaper>
+
+                    <MudSelect Class="ax_fullWidth" Label="Source" FullWidth="true" @bind-Value="LeadItem.LeadSource"
+                               OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                        @foreach (LeadSource item in Enum.GetValues(typeof(LeadSource)))
+                        {
+                            <MudSelectItem Value="@item">@item</MudSelectItem>
+                        }
+                    </MudSelect>
+
+                    <MudSelect Label="Currency" FullWidth="true" @bind-Value="LeadItem.ForecastedValueCurrency"
+                               OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                        @foreach (Currency item in Enum.GetValues(typeof(Currency)))
+                        {
+                            <MudSelectItem Value="@item">@item</MudSelectItem>
+                        }
+                    </MudSelect>
+                    @if (IsLead)
+                    {
+                        <MudSelect Label="Status" FullWidth="true" @bind-Value="LeadItem.LeadStatus"
+                                   OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                            @foreach (LeadStatus item in Enum.GetValues(typeof(LeadStatus)))
+                            {
+                                <MudSelectItem Value="@item">@item</MudSelectItem>
+                            }
+                        </MudSelect>
+                    }
+                    @if (IsOpportunity)
+                    {
+                        <MudSelect Label="Status" FullWidth="true" @bind-Value="LeadItem.Opportunity.Status"
+                                   OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                            @foreach (OpportunityCurrentState item in Enum.GetValues(typeof(OpportunityCurrentState)))
+                            {
+                                <MudSelectItem Value="@item">@item</MudSelectItem>
+                            }
+                        </MudSelect>
+
+                    }
+
+                    @if (IsProject)
+                    {
+
+                        <MudSelect Label="Status" FullWidth="true" @bind-Value="LeadItem.Project.Status"
+                                   OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                            @foreach (ProjectState item in Enum.GetValues(typeof(ProjectState)))
+                            {
+                                <MudSelectItem Value="@item">@item</MudSelectItem>
+                            }
+                        </MudSelect>
+
+                        @if (LeadItem.Project.Status == ProjectState.InProgress)
+                        {
+                            <MudSelect Label="Inprogress Status" FullWidth="true" @bind-Value="LeadItem.Project.InpState"
+                                       OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                                @foreach (InProgressSubState item in Enum.GetValues(typeof(InProgressSubState)))
+                                {
+                                    <MudSelectItem Value="@item">@item</MudSelectItem>
+                                }
+                            </MudSelect>
+                        }
+
+
+                        @if (LeadItem.Project.Status == ProjectState.Completed)
+                        {
+                            <MudSelect Label="Payment Status" FullWidth="true" @bind-Value="LeadItem.Project.PaymentStatus"
+                                       OpenIcon="@Icons.Material.Filled.AddRoad" AdornmentColor="Color.Primary" Style="min-width:100%">
+                                @foreach (PaymentStatus item in Enum.GetValues(typeof(PaymentStatus)))
+                                {
+                                    <MudSelectItem Value="@item">@item</MudSelectItem>
+                                }
+                            </MudSelect>
+                        }
+                    }
+
+                    <MudNumericField FullWidth="true" @bind-Value="LeadItem.ForecastedValue" Label="Forcasted value" Min="0" Variant="Variant.Outlined" Margin="Margin.Dense"></MudNumericField>
+                </div>
+
+
+
+
+            </MudItem>
+
+
+        </MudGrid>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit">Ok</MudButton>
+    </DialogActions>
+</MudDialog>
+
 
 @code {
+    [Parameter]
+    public string Title { get; set; }
 
+
+    [Parameter]
+    public Lead LeadItem { get; set; }
+
+
+    [Parameter]
+    public bool IsLead { get; set; }
+    [Parameter]
+    public bool IsOpportunity { get; set; }
+    [Parameter]
+    public bool IsProject { get; set; }
+
+
+    [Parameter]
+    public List<TemplateConfiguration> TemplateConfigurations { get; set; }
+
+    [Parameter]
+    public List<EngagementModel> EngagementModels { get; set; }
+
+    [CascadingParameter]
+    MudDialogInstance MudDialog { get; set; }
+
+
+    private List<string> Cities = new List<string>();
+    private List<string> Segments = new List<string>();
+
+
+    public string _currentSelectedCity { get; set; }
+    public string _currentSelectedRegion { get; set; }
+    public string _currentSelectedSegment { get; set; }
+    public string _currentSelectedTemplate { get; set; }
+
+    public LeadOppProVC()
+    {
+        _currentSelectedCity = string.Empty;
+        _currentSelectedRegion = string.Empty;
+        _currentSelectedSegment = string.Empty;
+        _currentSelectedTemplate = string.Empty;
+
+    }
+
+
+    private void TemplateChanged(string newValue)
+    {
+        _currentSelectedTemplate = newValue;
+        Cities = TemplateConfigurations.Where(x => x.Name == _currentSelectedTemplate).Select(x => x.City).Distinct().ToList();
+        Segments = TemplateConfigurations.Where(x => x.Name == _currentSelectedTemplate).Select(x => x.Segment).Distinct().ToList();
+        _currentSelectedCity = string.Empty;
+        _currentSelectedRegion = string.Empty;
+        _currentSelectedSegment = string.Empty;
+    }
+
+
+    void SegmentChanged(string newValue)
+    {
+        _currentSelectedSegment = newValue;
+        Cities = TemplateConfigurations.Where(x => x.Name == _currentSelectedTemplate && x.Segment == _currentSelectedSegment).Select(x => x.City).Distinct().ToList();
+    }
+
+
+    void CityChanged(string newValue)
+    {
+        _currentSelectedCity = newValue;
+        Segments = TemplateConfigurations.Where(x => x.Name == _currentSelectedTemplate && x.City == _currentSelectedCity).Select(x => x.Segment).Distinct().ToList();
+        _currentSelectedRegion = TemplateConfigurations.FirstOrDefault(x => x.Name == _currentSelectedTemplate && x.City == _currentSelectedCity).Region;
+    }
+
+
+    void Submit() => MudDialog.Close(DialogResult.Ok(true));
+    void Cancel() => MudDialog.Cancel();
 }
