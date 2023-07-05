@@ -32,6 +32,34 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/LeadVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcTGVhZFZDLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/LoginVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcTG9naW5WQy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/OpportunitiesVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcT3Bwb3J0dW5pdGllc1ZDLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/OrganisationVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcT3JnYW5pc2F0aW9uVkMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/ProjectVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcUHJvamVjdFZDLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/ReportsVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcUmVwb3J0c1ZDLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/StandardVC/LeadOppProVC.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhbmRhcmRWQ1xMZWFkT3BwUHJvVkMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

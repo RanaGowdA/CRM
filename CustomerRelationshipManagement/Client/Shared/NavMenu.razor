@@ -1,39 +1,15 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">CustomerRelationshipManagement</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
-
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-    </nav>
-</div>
-
-@code {
-    private bool collapseNavMenu = true;
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+﻿
+<MudNavMenu Color="Color.Dark" Dense="false" Bordered="true">
+    <MudNavLink Href="/" Icon="@Icons.Material.Filled.Dashboard" IconColor="Color.Primary">Dashboard</MudNavLink>
+    <MudNavLink Href="/accountsVC" Icon="@Icons.Material.Filled.Contacts" IconColor="Color.Primary">Accounts</MudNavLink>
+    <MudNavLink Href="/orgVC" Icon="@Icons.Material.Filled.BusinessCenter" IconColor="Color.Primary">Organizations</MudNavLink>
+    <MudNavLink Href="/leadsVC" Icon="@Icons.Material.Filled.Business" IconColor="Color.Primary">Leads</MudNavLink>
+    <MudNavLink Href="/opportunitiesVC" Icon="@Icons.Material.Filled.Add" IconColor="Color.Primary">Opportunities</MudNavLink>
+    <MudNavLink Href="/projectVC" Icon="@Icons.Material.Filled.Build" IconColor="Color.Primary">Projects</MudNavLink>
+    <MudNavLink Href="/reportsVC" Icon="@Icons.Material.Filled.Report" IconColor="Color.Primary">Reports</MudNavLink>
+    <MudNavLink Href="/loginVC" Icon="@Icons.Material.Filled.Login">Login</MudNavLink>
+    <MudNavGroup Icon="@Icons.Material.Filled.Settings" Title="Settings" Expanded="true">
+        <MudNavLink Icon="@Icons.Material.Filled.SupervisedUserCircle" Href="/users">Users</MudNavLink>
+        <MudNavLink Icon="@Icons.Material.Filled.Security" Href="/security">Security</MudNavLink>
+    </MudNavGroup>
+</MudNavMenu>

@@ -1,0 +1,12 @@
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\bin\Debug\net6.0\CustomerRelationshipManagement.Shared.deps.json
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\bin\Debug\net6.0\CustomerRelationshipManagement.Shared.dll
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\bin\Debug\net6.0\CustomerRelationshipManagement.Shared.pdb
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.csproj.AssemblyReference.cache
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.GeneratedMSBuildEditorConfig.editorconfig
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.AssemblyInfoInputs.cache
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.AssemblyInfo.cs
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.csproj.CoreCompileInputs.cache
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.dll
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\refint\CustomerRelationshipManagement.Shared.dll
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\CustomerRelationshipManagement.Shared.pdb
+R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Shared\obj\Debug\net6.0\ref\CustomerRelationshipManagement.Shared.dll
