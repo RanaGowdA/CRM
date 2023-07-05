@@ -1,4 +1,3 @@
-using CRM.Server.Repos.RepoImplementation;
 using CustomerRelationshipManagement.Server;
 using CustomerRelationshipManagement.Server.Data;
 using CustomerRelationshipManagement.Server.Repo.RepoImplementation;
@@ -20,7 +19,7 @@ builder.Services.AddDbContext<CRMDbContext>(options =>
 //      options.UseSqlite(builder.Configuration.GetConnectionString("CRMDb")));
 
 builder.Services.AddTransient<IAdministration, Administration>();
-builder.Services.AddTransient<ILeadRepository, LeadRepository>();
+//builder.Services.AddTransient<ILeadRepository, LeadRepository>();
 
 var app = builder.Build();
 

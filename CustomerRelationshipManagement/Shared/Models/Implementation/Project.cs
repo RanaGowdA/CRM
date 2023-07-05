@@ -12,12 +12,11 @@
         public DateTime ModifiedOn { get; set; }
         public int LastEditedById { get; set; }
         public int CreatedById { get; set; }
-        public Lead Lead { get; set; } = null!;
         public Project()
         {
             Status = ProjectState.None;
             InpState = InProgressSubState.None;
-            PaymentStatus = PaymentStatus.None; 
+            PaymentStatus = PaymentStatus.None;
         }
     }
 }

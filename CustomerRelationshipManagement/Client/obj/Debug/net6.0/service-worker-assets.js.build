@@ -5,7 +5,7 @@
       "url": "css\/app.css"
     },
     {
-      "hash": "sha256-SiIVMGgRhdXjKSTIddX7mh9IbOXVcwQWc7\/p4nS6D\/0=",
+      "hash": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=",
       "url": "css\/bootstrap\/bootstrap.min.css"
     },
     {
@@ -937,16 +937,8 @@
       "url": "_framework\/System.Private.CoreLib.dll"
     },
     {
-      "hash": "sha256-Iww31ANFa3KZuR4RkhiSYt3FJ7PKpMdeFNq3l3Td1h8=",
-      "url": "_framework\/dotnet.6.0.18.fsgwq42hzu.js"
-    },
-    {
       "hash": "sha256-eZ48TqSDBkRFut2vm6DOJQJPQjvG+LB8ucOA4NLkqg0=",
       "url": "_framework\/dotnet.timezones.blat"
-    },
-    {
-      "hash": "sha256-a72LObjDo13A83kXjiYr4L\/Ge6OltrKCx5e3b4PWANk=",
-      "url": "_framework\/dotnet.wasm"
     },
     {
       "hash": "sha256-Zuq0dWAsBm6\/2lSOsz7+H9PvFaRn61KIXHMMwXDfvyE=",
@@ -965,19 +957,27 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-La0ePpGC3Q\/MlGWaL+2zqriamGKcAM49vRv9vC9qWpI=",
+      "hash": "sha256-TGBR7XEbPpTgTmzhwTt4mRZX2tVwGrTXitf7SanDegY=",
       "url": "_framework\/CustomerRelationshipManagement.Shared.dll"
     },
     {
-      "hash": "sha256-ZvnLDGg0LGDdX5xDMLi6IxzZTt9Idv1n3Vtg3ykEAX8=",
+      "hash": "sha256-P3\/aVKJ1oUQdBs8fxZb641sqTqne+Y6OLjIji\/Fmpt8=",
       "url": "_framework\/CustomerRelationshipManagement.Shared.pdb"
     },
     {
-      "hash": "sha256-JUrEcCDayHzU6nj5y5YB1+m5WDY9wuWtkbrj7xrQrPw=",
+      "hash": "sha256-a72LObjDo13A83kXjiYr4L\/Ge6OltrKCx5e3b4PWANk=",
+      "url": "_framework\/dotnet.wasm"
+    },
+    {
+      "hash": "sha256-tiNL057vwa1GAtB2bizyW34jOFF55TgNWEceoFRewCI=",
+      "url": "_framework\/dotnet..szwhx0y1xt.js"
+    },
+    {
+      "hash": "sha256-f9bSSxq1GTrplN1w29MoY02aQ2Jfe2S2ryMNQxzrNyw=",
       "url": "_framework\/CustomerRelationshipManagement.Client.dll"
     },
     {
-      "hash": "sha256-o\/\/cWhHAEscpl\/X1GvfLrkeR479EBB2ZZxUepQH\/doU=",
+      "hash": "sha256-xnFObEfdAGRUAM9PGlfUhg\/Jc8MypES8Uwsps0zWp9w=",
       "url": "_framework\/CustomerRelationshipManagement.Client.pdb"
     },
     {
@@ -985,7 +985,7 @@
       "url": "_framework\/blazor.webassembly.js"
     },
     {
-      "hash": "sha256-RXEHYPFQvqiSh5rWI1IlEZ7MjcRzZIePYMM9vNrDGyw=",
+      "hash": "sha256-t00cS\/7ORoF0td2rUukY+vUM\/b5JjIuR\/n7iqwZvx0s=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -1001,5 +1001,5 @@
       "url": "_content\/MudBlazor.ThemeManager\/MudBlazorThemeManager.css"
     }
   ],
-  "version": "cFzb7l96"
+  "version": "SBTi+hYd"
 };

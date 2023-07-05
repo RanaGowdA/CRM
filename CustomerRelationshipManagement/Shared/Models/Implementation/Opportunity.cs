@@ -9,8 +9,7 @@
         public DateTime ModifiedOn { get; set; }
         public int LastEditedById { get; set; }
         public int CreatedById { get; set; }
-
-        public Lead Lead { get; set; } = null!;
+         
         public Opportunity()
         {
             Status = OpportunityCurrentState.Qualified;

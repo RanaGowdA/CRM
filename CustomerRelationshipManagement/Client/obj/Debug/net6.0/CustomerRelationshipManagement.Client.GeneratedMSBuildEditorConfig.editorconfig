@@ -9,89 +9,89 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = CustomerRelationshipManagement.Client
 build_property.RootNamespace = CustomerRelationshipManagement.Client
-build_property.ProjectDir = C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Client\
+build_property.ProjectDir = R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Client\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ng937c8\Documents\AXISCADES\CRM\CustomerRelationshipManagement\Client
+build_property.MSBuildProjectDirectory = R:\Web Development\RanaAdigowni\CRM\CustomerRelationshipManagement\Client
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/App.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/Counter.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/FetchData.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/FetchData.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/Index.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/AccountVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/AccountVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcQWNjb3VudFZDLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/AnalyticsVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/AnalyticsVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcQW5hbHl0aWNzVkMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/AssociateVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/AssociateVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcQXNzb2NpYXRlVkMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/ContactsVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/ContactsVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcQ29udGFjdHNWQy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/EngagementModelVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/EngagementModelVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcRW5nYWdlbWVudE1vZGVsVkMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/LeadVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/LeadVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcTGVhZFZDLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/LoginVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/LoginVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcTG9naW5WQy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/OpportunitiesVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/OpportunitiesVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcT3Bwb3J0dW5pdGllc1ZDLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/ProjectVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/ProjectVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcUHJvamVjdFZDLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/ReportsVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/ReportsVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcUmVwb3J0c1ZDLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/TemplateConfigurationVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/NavVC/TemplateConfigurationVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2VkNcVGVtcGxhdGVDb25maWd1cmF0aW9uVkMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Pages/StandardVC/LeadOppProVC.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Pages/StandardVC/LeadOppProVC.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhbmRhcmRWQ1xMZWFkT3BwUHJvVkMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Shared/SurveyPrompt.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/_Imports.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Shared/MainLayout.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-bs9lu3vtuz
 
-[C:/Users/ng937c8/Documents/AXISCADES/CRM/CustomerRelationshipManagement/Client/Shared/NavMenu.razor]
+[R:/Web Development/RanaAdigowni/CRM/CustomerRelationshipManagement/Client/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-4ez0nx86yd

@@ -1,4 +1,4 @@
-﻿@page "/projectVC"
+﻿@*@page "/projectVC"
 
 
 @using System.Net.Http.Json ;
@@ -314,3 +314,4 @@
         _events.Insert(0, $"Event = CommittedItemChanges, Data = {System.Text.Json.JsonSerializer.Serialize(item)}");
     }
 }
+*@
